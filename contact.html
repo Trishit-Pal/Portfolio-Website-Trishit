@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trishit Pal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background" style="background-image: url(bg.png);">
+    <div class="container">
+        <div class="sidebar sidebarGo">
+            <nav>
+                <ul>
+                    <li> <a href="/">Home</a></li>
+                    <li><a href="/intro.html">My Intro</a></li>
+                    <!-- <li><a href="/services.html">Services</a></li> -->
+                    <!-- <li><a href="/blog.html">CV</a></li> -->
+                    <li><a href="/blog.html">Projects</a></li>
+                    <li><a href="/contact.html">Contact Me</a></li>
+                </ul>
+        </nav>
+    </div>
+    <div class="main">
+      <div class="hamburger">
+        <img class="ham" src="ham.png" alt=""  width="23">
+        <img class="cross" src="cross.png" alt="" width="23">
+    </div>
+        <div class="contactform">
+            <h1>Contact me for work or general enquiries</h1>
+            <form name="submit-to-google-sheet">
+              <div class="mb-3">
+                <label for="clientemail" class="form-label" >Name</label>
+                <input type="text" class="form-control" id="clientemail" aria-describedby="emailHelp" name="Name">
+              </div>
+                <div class="mb-3">
+                  <label for="clientemail" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="clientemail" aria-describedby="emailHelp" name="Email address">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="clientphone" class="form-label">Phone</label>
+                  <input type="phone" class="form-control" id="clientphone" name="Phone">
+                </div>
+                <div class="mb-3">
+                  <label for="clientemail" class="form-label">Enquiry</label>
+                  <input type="text" class="form-control" id="clientemail" aria-describedby="emailHelp" name="Enquiry">
+                </div>
+                <div class="mb-3" id="form-check">
+                  <input type="checkbox" class="form-check-input" id="iclient">
+                  <label class="form-check-label" for="isclient">I want you to work on a project with me</label>
+                </div>
+                <button type="submit" class="btn btn-sm">Submit</button>
+              </form> 
+              <span id="msg"></span>
+        </div>
+        <div class="socials">
+          <h2>Socials : 
+            <a href="https://www.linkedin.com/in/trishit-pal-07"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </span></a>
+
+            <a href="https://www.facebook.com/trishit.pal.73/"><span class="icon"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+            </span></a>
+        </h2>
+          
+        </div>   
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwZpNZYJx7sowbcahagmpnLp1v0glUpdBhZ5lzVkGE8GlcAFEdYVAFNQLNOTlYbdt4gqQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML= "Record submitted successfully!"
+        setTimeout(function(){
+          msg.innerHTML=""
+        },4000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
