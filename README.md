@@ -1,7 +1,8 @@
 # Portfolio-Website-Trishit
 
 For Portfolio website:
-intro.html => homepage
+index.html => homepage
+intro.html => about me page
 blog.html =>Projects page
 contact.html => contact page
 script.js , index.js
