@@ -19,8 +19,8 @@
     width: 100%;
     max-width: 1000px;
     min-height: 100px;
-    background: #fff;
-    margin: 50px;
+    background: #060000;
+    margin:auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 35px 55px rgba(0,0,0,0.1);
@@ -191,6 +191,21 @@
     position: relative;
     background: #fff;
     padding: 40px;
+    margin-right: -5px;
+}
+.generate-pdf{
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    right: 10px;
+    font-size: 1.2rem;
+    color:rgb(9, 130, 236);
+    cursor: pointer;
+    display: inline;
+}
+
+.generate-pdf:hover{
+    color:#06222e;
 }
 
 .about{
@@ -287,7 +302,28 @@
     font-style: italic;
 }
 
+/* .scale-cv .generate-pdf{
+    display: none;
+}
+.scale-cv .container{
+    max-width: 700px;
+}
 
+.scale-cv .profiletext{
+    margin-bottom: 0.5rem;
+} */
+/* .scale-cv .imgbx{
+    width: 150px;
+    height: 150px;
+}
+.scale-cv .left_side,
+.scale-cv .right_side{
+    padding: 1rem 1rem;
+}
+.scale-cv .contactInfo .title .icon .text{
+    font-size: 0.5rem ;
+
+} */
 
 @media (max-width: 600px)
 {
